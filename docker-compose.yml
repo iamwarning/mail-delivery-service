@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  email:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - 6520:6520
+    networks:
+      - email-net
+networks:
+  email-net:
+    driver: bridge
